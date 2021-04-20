@@ -1,3 +1,56 @@
 body {
     background-color: bisque;
 }
+
+h1 {
+    text-align: center;
+    font-family: 'Zen Dots', cursive;
+}
+
+button {
+    color: #fff;
+    background-color: #000;
+    font-family: 'Zen Dots', cursive;
+    width: 100px;
+    height: 100px;
+    float: right;
+    margin-right: 50%;
+    border-radius: 50%;
+}
+
+.race-cars {
+    /* start off screen left -50px */
+    animation-name: enter;
+    animation-duration: 4s;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    margin-top: 90px;
+}
+
+/* @keyframes enter {
+    from {
+        position: relative;
+        left: -500px;
+    } to {
+        position: relative;
+        left: 0px;
+    }
+}; */
+
+
+
+.one {
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}
+
+.two {
+    animation-name: enter;
+    background-color: brown;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}
