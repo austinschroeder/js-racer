@@ -13,6 +13,8 @@ const $racer2 = $(`<img class="two" id="hare" src="https://i.pinimg.com/original
 const $instruction1 = $(`<p class="instruct1">Tortoise - Run by smashing "A"</p>`);
 const $instruction2 = $(`<p class="instruct2">Hare - Run by smashing "L"</p>`);
 const $timer = $(`<span id="timer">5</span>`);
+const $winner1 = $(`<p id="winner1"> THE TORTOISE IS VICTORIOUS </p>`)
+const $winner2 = $(`<p id="winner2"> THE HARE IS VICTORIOUS </p>`)
 
 
 
@@ -73,7 +75,8 @@ $(window).on("keydown", event => {
         }, 100 );
         winnerOne += 1;
         if (winnerOne === 45) {
-            window.alert('Tortoise has won the Race!');
+            // window.alert('Tortoise has won the Race!');
+            $('main').append($winner1);
         }
         
     } else if (event.keyCode === 76) {
@@ -83,7 +86,8 @@ $(window).on("keydown", event => {
         }, 100 );
         winnerTwo += 1;
         if (winnerTwo === 45) {
-            window.alert('Hare has won the Race!');
+            // window.alert('Hare has won the Race!');
+            $('main').append($winner2);
         }
         
     }
