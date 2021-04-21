@@ -12,7 +12,7 @@ const $racer1 = $(`<img class="one" src="https://i.pinimg.com/originals/eb/39/35
 const $racer2 = $(`<img class="two" src="https://i.pinimg.com/originals/05/c0/68/05c068556d91081d9892b3647ea3367f.png" />`);
 const $instruction1 = $(`<p class="instruct1">Tortoise - Run by smashing "A"</p>`);
 const $instruction2 = $(`<p class="instruct2">Hare - Run by smashing "L"</p>`);
-const $timer = $(`<span id="timer">10</span>`);
+const $timer = $(`<span id="timer">5</span>`);
 
 
 
@@ -57,20 +57,20 @@ $(window).on("keydown", event => {
     if (event.keyCode === 65) {
         
         $(".one").animate({ 
-            marginLeft: "+=20px",
+            marginLeft: "+=2%",
         }, 100 );
         winnerOne += 1;
-        if (winnerOne === 38) {
+        if (winnerOne === 45) {
             window.alert('Tortoise has won the Race!');
         }
         
     } else if (event.keyCode === 76) {
         
         $(".two").animate({ 
-            marginLeft: "+=20px",
+            marginLeft: "+=2%",
         }, 100 );
         winnerTwo += 1;
-        if (winnerTwo === 38) {
+        if (winnerTwo === 45) {
             window.alert('Hare has won the Race!');
         }
         

@@ -21,6 +21,8 @@ h1 {
     font-family: 'Zen Dots', cursive;
     font-size: 40px;
     text-align: right;
+    padding-right: 200px;
+    padding-top: 500px;
 }
 
 button {
@@ -44,20 +46,22 @@ button {
     /* start off screen left -50px */
     /* animation-name: enter; */
     /* animation-duration: 4s; */
-    background-color: gray;
+    /* background-color: gray; */
+    z-index: 3;
+    position: relative;
     display: flex;
     flex-direction: column;
     margin-top: 90px;
-
+    
 }
-
-
 
 
 .one {
     /* background-color: blue; */
+    position: absolute;
+    z-index: 3;
     animation-name: enter;
-    animation-duration: 9s;
+    animation-duration: 6s;
     transform: scaleX(-1);
     width: 100px;
     height: 100px;
@@ -66,11 +70,29 @@ button {
 
 .two {
     /* background-color: brown; */
+    position: absolute;
+    z-index: 3;
     animation-name: enter;
-    animation-duration: 7s;
+    animation-duration: 4s;
     width: 100px;
     height: 100px;
     margin: 20px;
+}
+
+.race-track {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    margin-top: 90px;
+    
+    width: 100%;
+    height: 300px;
+}
+
+.checkered {
+    z-index: 2;
+    display: block;
+    position: absolute;
 }
 
 @keyframes enter {
