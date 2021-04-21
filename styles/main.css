@@ -11,54 +11,138 @@ body {
     margin: 0 auto;
   }
 
+  main {
+      /* display: flex; */
+      flex-direction: column;
+      align-items: center;
+  }
+
 h1 {
     background: url("https://wallpaperaccess.com/full/1155041.jpg");
     text-align: center;
     font-family: 'Zen Dots', cursive;
     color: rgb(255, 255, 255);
+    text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
 }
 
 #timerContainer {
     /* border:black 5px solid; */
-    background-color: green; 
+    /* background-color: green;  */
     /* width: 30px; */
-    height: 0px;
+    /* height: 0px; */
     font-family: 'Zen Dots', cursive;
     font-size: 40px;
-    text-align: right;
+    text-align: center;
 }
 
 #timer {
     font-family: 'Zen Dots', cursive;
     color: red;
-    font-size: 40px;
-    text-align: right;
-    padding-right: 200px;
+    /* font-size: 40px; */
+    /* text-align: right; */
+    /* padding-right: 200px; */
     /* padding-top: 500px; */
     height: 0px;
+    /* padding: 20px; */
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color:rgb(53, 13, 13);
+    text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 5px 5px rgba(0,0,0,.2),
+               0 10px 10px rgba(0,0,0,.15);
 }
 
+.go-container {
+    /* background-color: black; */
+    vertical-align: top;
+    margin: 0px;
+}
+#go {
+    animation: go-blinker 0.25s linear 10;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 70px;
+    font-weight: bolder;
+    color: green;
+    vertical-align: top;
+    margin: 0;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+    text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+@keyframes go-blinker {
+    100% {
+      opacity: 0;
+    }
+  }
+
+
 button {
+    display: block;
     color: #fff;
     background-color: #000;
     font-family: 'Zen Dots', cursive;
     width: 100px;
     height: 100px;
-    float: right;
-    margin-right: 50%;
+    /* float: right; */
+    /* margin-right: 50%; */
     border-radius: 50%;
-    border-width: 10px;   
+    border-width: 10px; 
+    margin: 0 auto;  
 
 }
 
-.instructions {
+button:focus {
+    outline: none;
+}
+
+.placeholder {
    /* display: flex;
     flex-direction: column;
     align-items: flex-end; */
-    height: 200px;
+    height: 100px;
     color:white;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color:black;
+}
+
+#instruct-container1,
+#instruct-container2 {
+    background-color: blueviolet;
+    margin: 0 auto;
+}
+#instruct-container1 {
+    padding-bottom: 0px;
 }
 
 .instruct1,
@@ -69,14 +153,11 @@ button {
     /* height: 0px; */
     margin: 10px;
     font-size: 26px;
-    bottom: 0px;
-
-
+    color:white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:black;
 }
 
-.instruct2 {
-
-}
 
 .race-cars {
     /* start off screen left -50px */
@@ -139,13 +220,20 @@ button {
 
 #winner1,
 #winner2 {
+    animation: blinker 2s linear infinite;
     color:red;
+    background-color: cornsilk;
     font-size: 50px;
     font-weight: bold;
     text-align: center;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color:black;
 }
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
 
 @keyframes enter {
     from {

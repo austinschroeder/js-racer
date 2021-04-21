@@ -12,9 +12,10 @@ const $racer1 = $(`<img class="one" id="tortoise" src="https://i.pinimg.com/orig
 const $racer2 = $(`<img class="two" id="hare" src="https://i.pinimg.com/originals/05/c0/68/05c068556d91081d9892b3647ea3367f.png" />`);
 const $instruction1 = $(`<p class="instruct1">Tortoise - Run by smashing "A"</p>`);
 const $instruction2 = $(`<p class="instruct2">Hare - Run by smashing "L"</p>`);
-const $timer = $(`<span id="timer">5</span>`);
+const $timer = $(`<div id="timer">5</div>`);
 const $winner1 = $(`<p id="winner1"> THE TORTOISE IS VICTORIOUS </p>`)
 const $winner2 = $(`<p id="winner2"> THE HARE IS VICTORIOUS </p>`)
+const $go = $(`<p id="go"> GO! GO! GO! </p>`);
 
 
 
@@ -42,8 +43,8 @@ $('button').on('click', () => {
     //ADD ELEMENTS 
     $('#timerContainer').append($timer);
     
-    $('.instructions').append($instruction1);
-    $('.instructions').append($instruction2);
+    $('#instruct-container1').append($instruction1);
+    $('#instruct-container2').append($instruction2);
     
     $('.race-cars').append($racer1);
     $('.race-cars').append($racer2);
@@ -58,6 +59,10 @@ $('button').on('click', () => {
     seconds--;
     document.getElementById("timer").textContent = seconds;
     if (seconds <= 0) clearInterval(countdown);
+    if (seconds <= 0) {
+        console.log('go go go')
+        $('.go-container').append($go);
+    }
     }, 1000);
 });
 
@@ -74,9 +79,9 @@ $(window).on("keydown", event => {
             marginLeft: "+=2%",
         }, 100 );
         winnerOne += 1;
-        if (winnerOne === 45) {
+        if (winnerOne === 45 && winnerTwo < 45) {
             // window.alert('Tortoise has won the Race!');
-            $('main').append($winner1);
+            $('#winner-container').append($winner1);
         }
         
     } else if (event.keyCode === 76) {
@@ -85,9 +90,9 @@ $(window).on("keydown", event => {
             marginLeft: "+=2%",
         }, 100 );
         winnerTwo += 1;
-        if (winnerTwo === 45) {
+        if (winnerTwo === 45 && winnerOne < 45) {
             // window.alert('Hare has won the Race!');
-            $('main').append($winner2);
+            $('#winner-container').append($winner2);
         }
         
     }
