@@ -28,11 +28,11 @@ const $timer = $(`<span id="timer">5</span>`);
     
 //       }, 1000);
 
-let tortBoundingRect = null;
-let tortBoundingRect = null;
-let boundingRect = document.getElementById('race-track').getBoundingClientRect();
-// console.log(boundingRect);
-let winX = boundingRect.width
+// let tortBoundingRect = null;
+// let tortBoundingRect = null;
+// let boundingRect = document.getElementById('race-track').getBoundingClientRect();
+// // console.log(boundingRect);
+// let winX = boundingRect.width
 
 
 
@@ -46,10 +46,10 @@ $('button').on('click', () => {
     $('.race-cars').append($racer1);
     $('.race-cars').append($racer2);
     
-    tortBoundingRect = document.getElementById('tortoise').getBoundingClientRect()
-    harBoundingRect = document.getElementById('hare').getBoundingClientRect()
-    console.log(tortBoundingRect);
-    console.log(harBoundingRect);
+    // tortBoundingRect = document.getElementById('tortoise').getBoundingClientRect()
+    // harBoundingRect = document.getElementById('hare').getBoundingClientRect()
+    // console.log(tortBoundingRect);
+    // console.log(harBoundingRect);
     //COUNTDOWN TIMER
     let seconds = document.getElementById("timerContainer").textContent;
     let countdown = setInterval(function() {
@@ -69,7 +69,7 @@ let winnerTwo = 0;
 $(window).on("keydown", event => {
     if (event.keyCode === 65) {
         $(".one").animate({ 
-            marginLeft: "+=15px",
+            marginLeft: "+=2%",
         }, 100 );
         winnerOne += 1;
         if (winnerOne === 45) {
@@ -79,7 +79,7 @@ $(window).on("keydown", event => {
     } else if (event.keyCode === 76) {
         
         $(".two").animate({ 
-            marginLeft: "+=15px",
+            marginLeft: "+=2%",
         }, 100 );
         winnerTwo += 1;
         if (winnerTwo === 45) {
@@ -87,6 +87,6 @@ $(window).on("keydown", event => {
         }
         
     }
-})
+});
 ///////////////////////////////////////////////////
 ///////////////////////////////////////////////////
