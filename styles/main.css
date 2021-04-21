@@ -7,6 +7,22 @@ h1 {
     font-family: 'Zen Dots', cursive;
 }
 
+#timerContainer {
+    /* border:black 5px solid;
+    background-color: green; 
+    width: 30px;
+    height: 30px; */
+    font-family: 'Zen Dots', cursive;
+    font-size: 40px;
+    text-align: right;
+}
+
+#timer {
+    font-family: 'Zen Dots', cursive;
+    font-size: 40px;
+    text-align: right;
+}
+
 button {
     color: #fff;
     background-color: #000;
@@ -16,19 +32,48 @@ button {
     float: right;
     margin-right: 50%;
     border-radius: 50%;
+    border-width: 0px;   
+}
+
+.instruct1,
+.instruct2 {
+    font-family: 'Roboto', sans-serif;
 }
 
 .race-cars {
     /* start off screen left -50px */
-    animation-name: enter;
-    animation-duration: 4s;
+    /* animation-name: enter; */
+    /* animation-duration: 4s; */
     background-color: gray;
     display: flex;
     flex-direction: column;
     margin-top: 90px;
+
 }
 
-/* @keyframes enter {
+
+
+
+.one {
+    /* background-color: blue; */
+    animation-name: enter;
+    animation-duration: 9s;
+    transform: scaleX(-1);
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}
+
+.two {
+    /* background-color: brown; */
+    animation-name: enter;
+    animation-duration: 7s;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}
+
+@keyframes enter {
     from {
         position: relative;
         left: -500px;
@@ -36,21 +81,4 @@ button {
         position: relative;
         left: 0px;
     }
-}; */
-
-
-
-.one {
-    background-color: blue;
-    width: 100px;
-    height: 100px;
-    margin: 20px;
-}
-
-.two {
-    animation-name: enter;
-    background-color: brown;
-    width: 100px;
-    height: 100px;
-    margin: 20px;
-}
+};
