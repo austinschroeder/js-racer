@@ -46,9 +46,9 @@ button {
     /* start off screen left -50px */
     /* animation-name: enter; */
     /* animation-duration: 4s; */
-    /* background-color: gray; */
+    background-color: gray;
     z-index: 3;
-    position: relative;
+    /* position: relative; */
     display: flex;
     flex-direction: column;
     margin-top: 90px;
@@ -58,7 +58,7 @@ button {
 
 .one {
     /* background-color: blue; */
-    position: absolute;
+    /* position: absolute; */
     z-index: 3;
     animation-name: enter;
     animation-duration: 6s;
@@ -70,7 +70,7 @@ button {
 
 .two {
     /* background-color: brown; */
-    position: absolute;
+    /* position: absolute; */
     z-index: 3;
     animation-name: enter;
     animation-duration: 4s;
