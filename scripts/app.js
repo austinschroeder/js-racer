@@ -7,7 +7,7 @@
 //Tap L to drive car 2 (move to the right)
 
 
-const $button = $('button');
+// const $button = $('button');
 const $racer1 = $(`<img class="one" id="tortoise" src="https://i.pinimg.com/originals/eb/39/35/eb3935ae7c66765699a16865187bcd6c.png" />`);
 const $racer2 = $(`<img class="two" id="hare" src="https://i.pinimg.com/originals/05/c0/68/05c068556d91081d9892b3647ea3367f.png" />`);
 const $instruction1 = $(`<p class="instruct1">Tortoise - Run by smashing "A"</p>`);
@@ -16,8 +16,7 @@ const $timer = $(`<div id="timer">5</div>`);
 const $winner1 = $(`<p id="winner1"> THE TORTOISE IS VICTORIOUS </p>`)
 const $winner2 = $(`<p id="winner2"> THE HARE IS VICTORIOUS </p>`)
 const $go = $(`<p id="go"> GO! GO! GO! </p>`);
-
-
+const $reset = $(`<button id="reset-button">RESET</button>`)
 
 // let timer = 3;
 // function startTimer() {
@@ -25,12 +24,9 @@ const $go = $(`<p id="go"> GO! GO! GO! </p>`);
 //         timer--;
 //         console.log(timer)
 //         if (timer = 0) {
-            
 //             clearInterval(counter);
 //         }
-    
 //       }, 1000);
-
 // let tortBoundingRect = null;
 // let tortBoundingRect = null;
 // let boundingRect = document.getElementById('race-track').getBoundingClientRect();
@@ -38,8 +34,8 @@ const $go = $(`<p id="go"> GO! GO! GO! </p>`);
 // let winX = boundingRect.width
 
 
-
-$('button').on('click', () => {
+//START BUTTON
+$('.start-button').on('click', () => {
     //ADD ELEMENTS 
     $('#timerContainer').append($timer);
     
@@ -60,11 +56,12 @@ $('button').on('click', () => {
     document.getElementById("timer").textContent = seconds;
     if (seconds <= 0) clearInterval(countdown);
     if (seconds <= 0) {
-        console.log('go go go')
         $('.go-container').append($go);
+        $("#timerContainer").remove();
     }
     }, 1000);
 });
+
 
 // RACING LOGIC
 // keycode 65	"A"	
@@ -82,6 +79,8 @@ $(window).on("keydown", event => {
         if (winnerOne === 45 && winnerTwo < 45) {
             // window.alert('Tortoise has won the Race!');
             $('#winner-container').append($winner1);
+            $('#reset-container').append($reset)
+            $(".go-container").remove();
         }
         
     } else if (event.keyCode === 76) {
@@ -93,9 +92,18 @@ $(window).on("keydown", event => {
         if (winnerTwo === 45 && winnerOne < 45) {
             // window.alert('Hare has won the Race!');
             $('#winner-container').append($winner2);
+            $('#reset-container').append($reset)
+            $(".go-container").remove();
         }
         
     }
+    // RESET BUTTON
+    $('#reset-button').on('click', () => {
+        location.reload();
+        return false;
+        console.log('reset');
+    });
 });
+
 ///////////////////////////////////////////////////
 ///////////////////////////////////////////////////

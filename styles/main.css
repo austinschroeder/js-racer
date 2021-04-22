@@ -101,13 +101,13 @@ h1 {
                0 20px 20px rgba(0,0,0,.15);
 }
 @keyframes go-blinker {
-    100% {
+    50% {
       opacity: 0;
     }
   }
 
 
-button {
+.start-button {
     display: block;
     color: #fff;
     background-color: #000;
@@ -138,7 +138,8 @@ button:focus {
 
 #instruct-container1,
 #instruct-container2 {
-    background-color: blueviolet;
+    background-color: rgb(5, 56, 5);
+    /* opacity: 0.5; */
     margin: 0 auto;
 }
 #instruct-container1 {
@@ -178,7 +179,7 @@ button:focus {
     /* position: absolute; */
     z-index: 3;
     animation-name: enter;
-    animation-duration: 6s;
+    animation-duration: 4s;
     transform: scaleX(-1);
     width: 120px;
     height: auto;
@@ -190,7 +191,7 @@ button:focus {
     /* position: absolute; */
     z-index: 3;
     animation-name: enter;
-    animation-duration: 4s;
+    animation-duration: 2s;
     width: 100px;
     height: 100px;
     margin: 20px;
@@ -220,14 +221,43 @@ button:focus {
 
 #winner1,
 #winner2 {
-    animation: blinker 2s linear infinite;
+    animation: blinker 3s linear 3;
     color:red;
     background-color: cornsilk;
     font-size: 50px;
     font-weight: bold;
     text-align: center;
+    margin: 0px;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color:black;
+}
+
+#reset-container {
+    /* background-color: lightcoral; */
+    /* height: 20px; */
+}
+#reset-button {
+    display: block;
+    margin: 0 auto; 
+    margin-top: 20px; 
+    height: 30px;
+    width: 100px;
+    font-family: 'Zen Dots', cursive;
+    text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+    color: red;
+    border-radius: 35%;
+    
 }
 @keyframes blinker {
     50% {
