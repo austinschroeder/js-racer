@@ -36,13 +36,18 @@ h1 {
                0 20px 20px rgba(0,0,0,.15);
 }
 
+.scoreboard {
+    height: 150px;
+
+}
+
 #timerContainer {
     /* border:black 5px solid; */
     /* background-color: green;  */
     /* width: 30px; */
     /* height: 0px; */
     font-family: 'Zen Dots', cursive;
-    font-size: 40px;
+    font-size: 50px;
     text-align: center;
 }
 
@@ -69,6 +74,17 @@ h1 {
                0 5px 10px rgba(0,0,0,.25),
                0 5px 5px rgba(0,0,0,.2),
                0 10px 10px rgba(0,0,0,.15);
+}
+
+/* #lightsContainer {
+    height: 30px;
+    background: coral;
+} */
+
+.lights {
+    /* position: relative; */
+    height: 100px;
+    /* justify-content: center; */
 }
 
 .go-container {
@@ -127,10 +143,10 @@ button:focus {
 }
 
 .placeholder {
-   /* display: flex;
-    flex-direction: column;
-    align-items: flex-end; */
-    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 50px;
     color:white;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color:black;
@@ -140,10 +156,11 @@ button:focus {
 #instruct-container2 {
     background-color: rgb(5, 56, 5);
     /* opacity: 0.5; */
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    width: 298px;
 }
-#instruct-container1 {
-    padding-bottom: 0px;
+#instruct-container2 {
+    width: 263px;
 }
 
 .instruct1,
@@ -153,7 +170,7 @@ button:focus {
     font-family: 'Roboto', sans-serif;
     /* height: 0px; */
     margin: 10px;
-    font-size: 26px;
+    font-size: 20px;
     color:white;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color:black;
@@ -176,7 +193,7 @@ button:focus {
 
 .one {
     /* background-color: blue; */
-    /* position: absolute; */
+    position: absolute;
     z-index: 3;
     animation-name: enter;
     animation-duration: 4s;
@@ -188,7 +205,7 @@ button:focus {
 
 .two {
     /* background-color: brown; */
-    /* position: absolute; */
+    position: absolute;
     z-index: 3;
     animation-name: enter;
     animation-duration: 2s;
@@ -196,11 +213,12 @@ button:focus {
     height: 100px;
     margin: 20px;
     margin-top: 40px;
+    top: 130px;
 }
 
 .race-track {
     display: block;
-    position: absolute;
+    /* position: absolute; */
     z-index: 1;
     /* margin-top: 90px; */
     top: 0px;
@@ -219,6 +237,12 @@ button:focus {
     right: -80px;
 }
 
+#winner-container {
+    display: flex;
+    justify-content: center;
+    
+}
+
 #winner1,
 #winner2 {
     animation: blinker 3s linear 3;
@@ -227,17 +251,32 @@ button:focus {
     font-size: 50px;
     font-weight: bold;
     text-align: center;
+    width: 730px;
     margin: 0px;
+    border: gold 3px solid;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color:black;
+    border-radius: 5px 65px 0px;
+}
+
+#winner1 {
+    width: 815px;
 }
 
 #reset-container {
+    /* display: flex; */
+    /* justify-content: center; */
     /* background-color: lightcoral; */
     /* height: 20px; */
+    margin-top: 20px;
+    height: 60px;
+    /* position: absolute; */
+    
 }
 #reset-button {
+    /* position: relative; */
     display: block;
+    
     margin: 0 auto; 
     margin-top: 20px; 
     height: 30px;
@@ -267,10 +306,10 @@ button:focus {
 
 @keyframes enter {
     from {
-        position: relative;
+        /* position: relative; */
         left: -500px;
     } to {
-        position: relative;
+        /* position: relative; */
         left: 0px;
     }
 };
