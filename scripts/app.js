@@ -42,6 +42,15 @@ const $green = $(`<img class="lights" id="green" src="https://lh3.googleusercont
 
 //START BUTTON
 $('.start-button').on('click', () => {
+    winnerOne = 0;
+    winnerTwo = 0;
+    $(".one").animate({ 
+        left: "0px",
+    }, 100 );
+    $(".two").animate({ 
+        left: "0px",
+    }, 100 );
+    $("#winner-container").html('');
     // Play Audio
     //Crowd Cheers
     const crowd = document.createElement("audio");
@@ -88,8 +97,6 @@ $('.start-button').on('click', () => {
         }
         if (seconds === 1) {
             $('#yellow3').remove();
-            $('.placeholder').append($yellow);
-            $('.placeholder').append($yellow);
         }
     }, 1000);
 });
@@ -98,7 +105,9 @@ $('.start-button').on('click', () => {
 // keycode 65	"A"	
 // keycode 76	"L"
 let winnerOne = 0;
+let winnerOneTotal = 0;
 let winnerTwo = 0;
+let winnerTwoTotal = 0;
 
 $(window).on("keydown", event => {
     if (event.keyCode === 65) {
@@ -106,6 +115,7 @@ $(window).on("keydown", event => {
             left: "+=2%",
         }, 100 );
         winnerOne += 1;
+    
         if (winnerOne === 45 && winnerTwo < 45) {
             const winnerMusic = document.createElement("audio");
             winnerMusic.src = "./audio/victorymusic.mp3"; 
@@ -113,6 +123,7 @@ $(window).on("keydown", event => {
             $('#winner-container').append($winner1);
             $('#reset-container').append($reset)
             $(".go-container").remove();
+            winnerOneTotal += 1;
         }
         
     } else if (event.keyCode === 76) {
@@ -128,14 +139,24 @@ $(window).on("keydown", event => {
             $('#winner-container').append($winner2);
             $('#reset-container').append($reset)
             $(".go-container").remove();
+            winnerTwoTotal += 1;
         }
         
     }
     // RESET BUTTON
     $('#reset-button').on('click', () => {
-        location.reload();
-        return false;
-        console.log('reset');
+        // location.reload();
+        // return false;
+        winnerOne = 0;
+        winnerTwo = 0;
+        $(".one").animate({ 
+            left: "0px",
+        }, 100 );
+        $(".two").animate({ 
+            left: "0px",
+        }, 100 );
+        $("#winner-container").remove();
+        
     });
 });
 

@@ -304,12 +304,12 @@ button:focus {
     }
   }
 
-@keyframes enter {
+/* @keyframes enter {
     from {
-        /* position: relative; */
+        
         left: -500px;
     } to {
-        /* position: relative; */
+        
         left: 0px;
     }
-};
+}; */
