@@ -8,6 +8,8 @@
 
 
 // const $button = $('button');
+const $racer1Score = $(`<p id="racer1-score">'0'</p>`)
+const $racer2Score = $(`<p id="racer2-score">'0'</p>`)
 const $racer1 = $(`<img class="one" id="tortoise" src="https://i.pinimg.com/originals/eb/39/35/eb3935ae7c66765699a16865187bcd6c.png" />`);
 const $racer2 = $(`<img class="two" id="hare" src="https://i.pinimg.com/originals/05/c0/68/05c068556d91081d9892b3647ea3367f.png" />`);
 const $instruction1 = $(`<p class="instruct1">Tortoise - Run by smashing "A"</p>`);
@@ -24,33 +26,22 @@ const $yellow1 = $(`<img class="lights" id="yellow1" src="https://lh3.googleuser
 const $yellow2 = $(`<img class="lights" id="yellow2" src="https://lh3.googleusercontent.com/proxy/uvqUW44pblvmWD9we9AwpwW0E9koodadYCHFsrk-pxJQxU8XHNRVe6g-qSo5Xs-V9ZQXs8_TIwkxKcIpfsBypKTMKuTzm-cGSDbtEjHIUXdCLkNoT5F4Ww" />`)
 const $yellow3 = $(`<img class="lights" id="yellow3" src="https://lh3.googleusercontent.com/proxy/uvqUW44pblvmWD9we9AwpwW0E9koodadYCHFsrk-pxJQxU8XHNRVe6g-qSo5Xs-V9ZQXs8_TIwkxKcIpfsBypKTMKuTzm-cGSDbtEjHIUXdCLkNoT5F4Ww" />`)
 const $green = $(`<img class="lights" id="green" src="https://lh3.googleusercontent.com/proxy/HgjaH4AcBMcNAkB7J_A2UMG-hsKTWB9q-SzuUPRSlNA_a9dzb7pjHuokQ0bgUV9swOrND1WmsV5WuXx2rFMaRFjjhralYXUTbcxvsS0tTOs5cRjnDxgl7sDIpKg" />`)
-// let timer = 3;
-// function startTimer() {
-//     const counter = setInterval(function() {
-//         timer--;
-//         console.log(timer)
-//         if (timer = 0) {
-//             clearInterval(counter);
-//         }
-//       }, 1000);
-// let tortBoundingRect = null;
-// let tortBoundingRect = null;
-// let boundingRect = document.getElementById('race-track').getBoundingClientRect();
-// // console.log(boundingRect);
-// let winX = boundingRect.width
 
 
 //START BUTTON
 $('.start-button').on('click', () => {
-    winnerOne = 0;
-    winnerTwo = 0;
-    $(".one").animate({ 
-        left: "0px",
-    }, 100 );
-    $(".two").animate({ 
-        left: "0px",
-    }, 100 );
-    $("#winner-container").html('');
+    // NEW RESET FUNCTION
+    // winnerOne = 0;
+    // winnerTwo = 0;
+    // $(".one").animate({ 
+    //     left: "0px",
+    // }, 100 );
+    // $(".two").animate({ 
+    //     left: "0px",
+    // }, 100 );
+    // $("#winner-container").html('');
+
+    ////////////////
     // Play Audio
     //Crowd Cheers
     const crowd = document.createElement("audio");
@@ -62,10 +53,7 @@ $('.start-button').on('click', () => {
     $('#timerContainer').append($timer);  
     $('.race-cars').append($racer1);
     $('.race-cars').append($racer2);
-    // tortBoundingRect = document.getElementById('tortoise').getBoundingClientRect()
-    // harBoundingRect = document.getElementById('hare').getBoundingClientRect()
-    // console.log(tortBoundingRect);
-    // console.log(harBoundingRect);
+   
     //COUNTDOWN TIMER
     let seconds = document.getElementById("timerContainer").textContent;
     let countdown = setInterval(function() {
@@ -115,7 +103,8 @@ $(window).on("keydown", event => {
             left: "+=2%",
         }, 100 );
         winnerOne += 1;
-    
+        console.log(winnerOne);
+        
         if (winnerOne === 45 && winnerTwo < 45) {
             const winnerMusic = document.createElement("audio");
             winnerMusic.src = "./audio/victorymusic.mp3"; 
@@ -124,7 +113,11 @@ $(window).on("keydown", event => {
             $('#reset-container').append($reset)
             $(".go-container").remove();
             winnerOneTotal += 1;
-        }
+            // let totalScore1 = $('#racer1-score').val();
+            // totalScore1 = parseInt(totalScore1) + 1;
+            // let winnerOneTotal = Number($('#racer1-score').val()) + 1;
+            
+        };
         
     } else if (event.keyCode === 76) {
         
@@ -132,6 +125,7 @@ $(window).on("keydown", event => {
             left: "+=2%",
         }, 100 );
         winnerTwo += 1;
+        console.log(winnerTwo);
         if (winnerTwo === 45 && winnerOne < 45) {
             const winnerMusic = document.createElement("audio");
             winnerMusic.src = "./audio/victorymusic.mp3"; 
@@ -143,22 +137,24 @@ $(window).on("keydown", event => {
         }
         
     }
-    // RESET BUTTON
-    $('#reset-button').on('click', () => {
-        // location.reload();
-        // return false;
-        winnerOne = 0;
-        winnerTwo = 0;
-        $(".one").animate({ 
-            left: "0px",
-        }, 100 );
-        $(".two").animate({ 
-            left: "0px",
-        }, 100 );
-        $("#winner-container").remove();
-        
-    });
 });
 
+// RESET BUTTON
+$('#reset-container').on('click', '#reset-button', () => {
+    // location.reload();
+    // return false;
+    winnerOne = 0;
+    winnerTwo = 0;
+    $(".one").animate({ 
+        left: "0px",
+    }, 500 );
+    $(".two").animate({ 
+        left: "0px",
+    }, 500 );
+    $("#winner1").remove();
+    $("#winner2").remove();
+    $("#reset-button").remove();
+    
+});
 ///////////////////////////////////////////////////
 ///////////////////////////////////////////////////

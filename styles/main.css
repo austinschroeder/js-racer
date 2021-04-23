@@ -1,3 +1,10 @@
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+}
+
+
 body { 
     background: url('https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/rZJIMvhmliwmde8a6/videoblocks-top-view-of-sunflower-field-sunflowers-moving-in-the-wind_hlxym3at9l_thumbnail-1080_01.png') no-repeat center center fixed;  
     -webkit-background-size: cover;
@@ -39,6 +46,15 @@ h1 {
 .scoreboard {
     height: 150px;
 
+}
+
+#racer1-score,
+#racer2-score {
+    color: cornsilk;
+    background-color: crimson;
+    text-align: center;
+    font-size: 30px;
+    width: 30px;
 }
 
 #timerContainer {
