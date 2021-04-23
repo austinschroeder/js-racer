@@ -10,59 +10,49 @@
 // const $button = $('button');
 const $racer1Score = $(`<p id="racer1-score">'0'</p>`)
 const $racer2Score = $(`<p id="racer2-score">'0'</p>`)
-const $racer1 = $(`<img class="one" id="tortoise" src="https://i.pinimg.com/originals/eb/39/35/eb3935ae7c66765699a16865187bcd6c.png" />`);
-const $racer2 = $(`<img class="two" id="hare" src="https://i.pinimg.com/originals/05/c0/68/05c068556d91081d9892b3647ea3367f.png" />`);
+const $racer1 = $(`<img class="one" id="tortoise" src="./images/tortoise.png" />`);
+const $racer2 = $(`<img class="two" id="hare" src="./images/hare.png" />`);
 const $instruction1 = $(`<p class="instruct1">Tortoise - Run by smashing "A"</p>`);
 const $instruction2 = $(`<p class="instruct2">Hare - Run by smashing "L"</p>`);
-const $timer = $(`<div id="timer">5</div>`);
+const $timer = $(`<div id="timer"></div>`);
 const $winner1 = $(`<p id="winner1"> THE TORTOISE IS VICTORIOUS </p>`)
 const $winner2 = $(`<p id="winner2"> THE HARE IS VICTORIOUS </p>`)
 const $go = $(`<p id="go"> GO! GO! GO! </p>`);
 const $reset = $(`<button id="reset-button">RESET</button>`)
-const $red1 = $(`<img class="lights" id="red1" src="https://lh3.googleusercontent.com/proxy/QrBSAkF98L3UwzR8ScvdnfHf6X_15UGoQOLbvSffCN9fKhfBiHjrLWlDwvEwgW68-SBlbfQJRhHsgue2hVdXGNZdfH5JOZGtFUFsC5ih5Whic7fQOaVAYvqCs_ba-es" />`)
-const $red2 = $(`<img class="lights" id="red2" src="https://lh3.googleusercontent.com/proxy/QrBSAkF98L3UwzR8ScvdnfHf6X_15UGoQOLbvSffCN9fKhfBiHjrLWlDwvEwgW68-SBlbfQJRhHsgue2hVdXGNZdfH5JOZGtFUFsC5ih5Whic7fQOaVAYvqCs_ba-es" />`)
-const $red3 = $(`<img class="lights" id="red3" src="https://lh3.googleusercontent.com/proxy/QrBSAkF98L3UwzR8ScvdnfHf6X_15UGoQOLbvSffCN9fKhfBiHjrLWlDwvEwgW68-SBlbfQJRhHsgue2hVdXGNZdfH5JOZGtFUFsC5ih5Whic7fQOaVAYvqCs_ba-es" />`)
-const $yellow1 = $(`<img class="lights" id="yellow1" src="https://lh3.googleusercontent.com/proxy/uvqUW44pblvmWD9we9AwpwW0E9koodadYCHFsrk-pxJQxU8XHNRVe6g-qSo5Xs-V9ZQXs8_TIwkxKcIpfsBypKTMKuTzm-cGSDbtEjHIUXdCLkNoT5F4Ww" />`)
-const $yellow2 = $(`<img class="lights" id="yellow2" src="https://lh3.googleusercontent.com/proxy/uvqUW44pblvmWD9we9AwpwW0E9koodadYCHFsrk-pxJQxU8XHNRVe6g-qSo5Xs-V9ZQXs8_TIwkxKcIpfsBypKTMKuTzm-cGSDbtEjHIUXdCLkNoT5F4Ww" />`)
-const $yellow3 = $(`<img class="lights" id="yellow3" src="https://lh3.googleusercontent.com/proxy/uvqUW44pblvmWD9we9AwpwW0E9koodadYCHFsrk-pxJQxU8XHNRVe6g-qSo5Xs-V9ZQXs8_TIwkxKcIpfsBypKTMKuTzm-cGSDbtEjHIUXdCLkNoT5F4Ww" />`)
-const $green = $(`<img class="lights" id="green" src="https://lh3.googleusercontent.com/proxy/HgjaH4AcBMcNAkB7J_A2UMG-hsKTWB9q-SzuUPRSlNA_a9dzb7pjHuokQ0bgUV9swOrND1WmsV5WuXx2rFMaRFjjhralYXUTbcxvsS0tTOs5cRjnDxgl7sDIpKg" />`)
+const $red1 = $(`<img class="lights" id="red1" src="./images/red.png" />`)
+const $red2 = $(`<img class="lights" id="red2" src="./images/red.png" />`)
+const $red3 = $(`<img class="lights" id="red3" src="./images/red.png" />`)
+const $yellow1 = $(`<img class="lights" id="yellow1" src="./images/yellow.png" />`)
+const $yellow2 = $(`<img class="lights" id="yellow2" src="./images/yellow.png" />`)
+const $yellow3 = $(`<img class="lights" id="yellow3" src="./images/yellow.png" />`)
+const $green = $(`<img class="lights" id="green" src="./images/green.png" />`)
 
 
 //START BUTTON
 $('.start-button').on('click', () => {
-    // NEW RESET FUNCTION
-    // winnerOne = 0;
-    // winnerTwo = 0;
-    // $(".one").animate({ 
-    //     left: "0px",
-    // }, 100 );
-    // $(".two").animate({ 
-    //     left: "0px",
-    // }, 100 );
-    // $("#winner-container").html('');
-
-    ////////////////
     // Play Audio
     //Crowd Cheers
     const crowd = document.createElement("audio");
     crowd.src = "./audio/crowd.mp3"; 
     crowd.play(); 
- 
+    
+    let seconds = 6;
     //Countdown
     //ADD ELEMENTS 
-    $('#timerContainer').append($timer);  
     $('.race-cars').append($racer1);
     $('.race-cars').append($racer2);
-   
+    
     //COUNTDOWN TIMER
-    let seconds = document.getElementById("timerContainer").textContent;
     let countdown = setInterval(function() {
+        $('#timerContainer').append($timer);  
         seconds--;
         document.getElementById("timer").textContent = seconds;
+        console.log(seconds);
         if (seconds <= 0) clearInterval(countdown);
+        //ADD/REMOVE ELEMENTS
         if (seconds <= 0) {
             $('.go-container').append($go);
-            $("#timerContainer").remove();
+            $("#timer").remove();
             $('#yellow1').remove();
             $('#yellow2').remove();
         }
@@ -89,9 +79,7 @@ $('.start-button').on('click', () => {
     }, 1000);
 });
 
-// RACING LOGIC
-// keycode 65	"A"	
-// keycode 76	"L"
+// RACING LOGIC // keycode 65"A" // keycode 76"L"
 let winnerOne = 0;
 let winnerOneTotal = 0;
 let winnerTwo = 0;
@@ -103,7 +91,7 @@ $(window).on("keydown", event => {
             left: "+=2%",
         }, 100 );
         winnerOne += 1;
-        console.log(winnerOne);
+        // console.log(winnerOne);
         
         if (winnerOne === 45 && winnerTwo < 45) {
             const winnerMusic = document.createElement("audio");
@@ -125,7 +113,7 @@ $(window).on("keydown", event => {
             left: "+=2%",
         }, 100 );
         winnerTwo += 1;
-        console.log(winnerTwo);
+        // console.log(winnerTwo);
         if (winnerTwo === 45 && winnerOne < 45) {
             const winnerMusic = document.createElement("audio");
             winnerMusic.src = "./audio/victorymusic.mp3"; 
@@ -134,8 +122,7 @@ $(window).on("keydown", event => {
             $('#reset-container').append($reset)
             $(".go-container").remove();
             winnerTwoTotal += 1;
-        }
-        
+        } 
     }
 });
 
@@ -143,6 +130,8 @@ $(window).on("keydown", event => {
 $('#reset-container').on('click', '#reset-button', () => {
     // location.reload();
     // return false;
+    seconds = 6;
+    console.log(seconds);
     winnerOne = 0;
     winnerTwo = 0;
     $(".one").animate({ 
@@ -154,6 +143,7 @@ $('#reset-container').on('click', '#reset-button', () => {
     $("#winner1").remove();
     $("#winner2").remove();
     $("#reset-button").remove();
+    // $("#timer").html('5');
     
 });
 ///////////////////////////////////////////////////
