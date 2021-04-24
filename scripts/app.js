@@ -6,8 +6,6 @@
 //Tap A to drive car 1 (move to the right)
 //Tap L to drive car 2 (move to the right)
 
-
-// const $button = $('button');
 const $racer1Score = $(`<p id="racer1-score">'0'</p>`)
 const $racer2Score = $(`<p id="racer2-score">'0'</p>`)
 const $racer1 = $(`<img class="one" id="tortoise" src="./images/tortoise.png" />`);
@@ -19,6 +17,7 @@ const $winner1 = $(`<p id="winner1"> THE TORTOISE IS VICTORIOUS </p>`)
 const $winner2 = $(`<p id="winner2"> THE HARE IS VICTORIOUS </p>`)
 const $go = $(`<p id="go"> GO! GO! GO! </p>`);
 const $reset = $(`<button id="reset-button">RESET</button>`)
+const $startOver = $(`<button id="start-over-button">START OVER</button>`)
 const $red1 = $(`<img class="lights" id="red1" src="./images/red.png" />`)
 const $red2 = $(`<img class="lights" id="red2" src="./images/red.png" />`)
 const $red3 = $(`<img class="lights" id="red3" src="./images/red.png" />`)
@@ -27,7 +26,7 @@ const $yellow2 = $(`<img class="lights" id="yellow2" src="./images/yellow.png" /
 const $yellow3 = $(`<img class="lights" id="yellow3" src="./images/yellow.png" />`)
 const $green = $(`<img class="lights" id="green" src="./images/green.png" />`)
 
-
+let seconds;
 //START BUTTON
 $('.start-button').on('click', () => {
     // Play Audio
@@ -36,7 +35,7 @@ $('.start-button').on('click', () => {
     crowd.src = "./audio/crowd.mp3"; 
     crowd.play(); 
     
-    let seconds = 6;
+    seconds = 6;
     //Countdown
     //ADD ELEMENTS 
     $('.race-cars').append($racer1);
@@ -47,7 +46,7 @@ $('.start-button').on('click', () => {
         $('#timerContainer').append($timer);  
         seconds--;
         document.getElementById("timer").textContent = seconds;
-        console.log(seconds);
+        // console.log(seconds);
         if (seconds <= 0) clearInterval(countdown);
         //ADD/REMOVE ELEMENTS
         if (seconds <= 0) {
@@ -55,6 +54,7 @@ $('.start-button').on('click', () => {
             $("#timer").remove();
             $('#yellow1').remove();
             $('#yellow2').remove();
+            $('.start-button').remove()
         }
         if (seconds === 3) {
             const countAudio = document.createElement("audio");
@@ -86,12 +86,11 @@ let winnerTwo = 0;
 let winnerTwoTotal = 0;
 
 $(window).on("keydown", event => {
-    if (event.keyCode === 65) {
+    if (seconds <= 0 && event.keyCode === 65) {
         $(".one").animate({ 
             left: "+=2%",
         }, 100 );
         winnerOne += 1;
-        // console.log(winnerOne);
         
         if (winnerOne === 45 && winnerTwo < 45) {
             const winnerMusic = document.createElement("audio");
@@ -101,19 +100,21 @@ $(window).on("keydown", event => {
             $('#reset-container').append($reset)
             $(".go-container").remove();
             winnerOneTotal += 1;
-            // let totalScore1 = $('#racer1-score').val();
-            // totalScore1 = parseInt(totalScore1) + 1;
-            // let winnerOneTotal = Number($('#racer1-score').val()) + 1;
-            
+            // Declare P1 overall winner
+            $('#racer1-score').text(`${winnerOneTotal}`)
+            if (winnerOneTotal === 3) {
+                $('#reset-button').remove();
+                $('#reset-container').append($startOver)
+            };
         };
         
-    } else if (event.keyCode === 76) {
+        
+    } else if (seconds <= 0 && event.keyCode === 76) {
         
         $(".two").animate({ 
             left: "+=2%",
         }, 100 );
         winnerTwo += 1;
-        // console.log(winnerTwo);
         if (winnerTwo === 45 && winnerOne < 45) {
             const winnerMusic = document.createElement("audio");
             winnerMusic.src = "./audio/victorymusic.mp3"; 
@@ -122,16 +123,25 @@ $(window).on("keydown", event => {
             $('#reset-container').append($reset)
             $(".go-container").remove();
             winnerTwoTotal += 1;
-        } 
+            $('#racer2-score').text(`${winnerTwoTotal}`);
+            // Declare P2 overall winner
+            if (winnerTwoTotal === 3) {
+                $('#reset-button').remove();
+                $('#reset-container').append($startOver)
+            }
+        }   
     }
+    //Start Over Button
+    $('#start-over-button').on('click', () => {
+    console.log('button is working');
+    location.reload();
+    return false;
+    });
 });
 
 // RESET BUTTON
 $('#reset-container').on('click', '#reset-button', () => {
-    // location.reload();
-    // return false;
     seconds = 6;
-    console.log(seconds);
     winnerOne = 0;
     winnerTwo = 0;
     $(".one").animate({ 
@@ -143,8 +153,15 @@ $('#reset-container').on('click', '#reset-button', () => {
     $("#winner1").remove();
     $("#winner2").remove();
     $("#reset-button").remove();
-    // $("#timer").html('5');
-    
+    // $('main').append()
+});
+
+//Start Over Button
+$('#start-over-button').on('click', () => {
+    console.log('button is working');
+    location.reload();
+    return false;
+
 });
 ///////////////////////////////////////////////////
 ///////////////////////////////////////////////////
