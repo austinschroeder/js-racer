@@ -25,6 +25,7 @@ const $yellow1 = $(`<img class="lights" id="yellow1" src="./images/yellow.png" /
 const $yellow2 = $(`<img class="lights" id="yellow2" src="./images/yellow.png" />`)
 const $yellow3 = $(`<img class="lights" id="yellow3" src="./images/yellow.png" />`)
 const $green = $(`<img class="lights" id="green" src="./images/green.png" />`)
+const $trophy = $(`<img id="trophy" src="./images/trophy.gif" />`)
 
 let seconds;
 //START BUTTON
@@ -54,7 +55,7 @@ $('.start-button').on('click', () => {
             $("#timer").remove();
             $('#yellow1').remove();
             $('#yellow2').remove();
-            $('.start-button').remove()
+            $('.start-button').hide("slow, swing")
         }
         if (seconds === 3) {
             const countAudio = document.createElement("audio");
@@ -105,6 +106,7 @@ $(window).on("keydown", event => {
             if (winnerOneTotal === 3) {
                 $('#reset-button').remove();
                 $('#reset-container').append($startOver)
+                $('.placeholder').append($trophy);
             };
         };
         
@@ -153,7 +155,7 @@ $('#reset-container').on('click', '#reset-button', () => {
     $("#winner1").remove();
     $("#winner2").remove();
     $("#reset-button").remove();
-    // $('main').append()
+    $('.start-button').show("slow")
 });
 
 //Start Over Button

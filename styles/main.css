@@ -1,3 +1,8 @@
+@font-face {
+    font-family: digital;
+    src: url("../fonts/wwDigital.ttf");
+  }
+
 @media screen 
   and (min-device-width: 1200px) 
   and (max-device-width: 1600px) 
@@ -43,19 +48,54 @@ h1 {
                0 20px 20px rgba(0,0,0,.15);
 }
 
-.scoreboard {
-    height: 150px;
+#scoreboard-container {
+    z-index: -1;
+    position: absolute;
+    display: inline-block;
+    background-image: url("../images/scoreboard.jpeg");
+    height: 30vw;
+    width: 50vw;
+    /* margin-left: 30px; */
+    background-repeat: no-repeat;
+}
 
+
+.bug {
+    transform: rotate(45deg);
+    height: 40px;
+    margin-top: 240px;
+    margin-left: 172px;
+}
+
+#score-totals {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    margin-bottom: 30px;
+    
+}
+
+.trophy {
+    height: 200px;
+    z-index: 100;
 }
 
 #racer1-score,
 #racer2-score {
-    color: cornsilk;
-    background-color: crimson;
-    text-align: center;
-    font-size: 30px;
-    width: 30px;
+   font-family: digital;
+   color: red;
+   font-size: 120px;
+   margin-top: 58px;
+   /* height: 20px; */
 }
+
+#racer1-score {
+    margin-left: 32px;
+}
+#racer2-score {
+    margin-right: 85px;
+}
+
 
 #timerContainer {
     /* border:black 5px solid; */
@@ -133,6 +173,11 @@ h1 {
     }
   }
 
+  .start-container {
+      height: 100px;
+      margin-top: 65px;
+  }
+
 
 .start-button {
     display: block;
@@ -141,8 +186,8 @@ h1 {
     font-family: 'Zen Dots', cursive;
     width: 100px;
     height: 100px;
-    /* float: right; */
-    /* margin-right: 50%; */
+    z-index: 99;
+    
     border-radius: 50%;
     border-width: 10px; 
     margin: 0 auto;  
@@ -158,10 +203,11 @@ button:focus {
 }
 
 .placeholder {
+    z-index: 100;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 50px;
+    height: 180px;
     color:white;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color:black;
@@ -197,7 +243,7 @@ button:focus {
     /* animation-name: enter; */
     /* animation-duration: 4s; */
     background-color: gray;
-    z-index: 3;
+    z-index: -1;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -234,7 +280,7 @@ button:focus {
 .race-track {
     display: block;
     /* position: absolute; */
-    z-index: 1;
+    z-index: 2;
     /* margin-top: 90px; */
     top: 0px;
     width: 100%;
