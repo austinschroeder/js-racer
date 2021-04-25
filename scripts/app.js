@@ -99,7 +99,7 @@ $(window).on("keydown", event => {
             winnerMusic.play(); 
             $('#winner-container').append($winner1);
             $('#reset-container').append($reset)
-            $(".go-container").remove();
+            $("#go").remove();
             winnerOneTotal += 1;
             // Declare P1 overall winner
             $('#racer1-score').text(`${winnerOneTotal}`)
@@ -123,13 +123,14 @@ $(window).on("keydown", event => {
             winnerMusic.play(); 
             $('#winner-container').append($winner2);
             $('#reset-container').append($reset)
-            $(".go-container").remove();
+            $("#go").remove();
             winnerTwoTotal += 1;
             $('#racer2-score').text(`${winnerTwoTotal}`);
             // Declare P2 overall winner
             if (winnerTwoTotal === 3) {
                 $('#reset-button').remove();
                 $('#reset-container').append($startOver)
+                $('.placeholder').append($trophy);
             }
         }   
     }

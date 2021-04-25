@@ -9,14 +9,31 @@
   and (-webkit-min-device-pixel-ratio: 1) { 
 }
 
+* {
+    outline: 1px solid orange;
+}
 
-body { 
-    background: url('https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/rZJIMvhmliwmde8a6/videoblocks-top-view-of-sunflower-field-sunflowers-moving-in-the-wind_hlxym3at9l_thumbnail-1080_01.png') no-repeat center center fixed;  
+#stage {
+    width: 1200px;
+    margin: 0 auto;
+    background: url("../images/grass.png") no-repeat center center fixed;  
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 0;
+}
+
+
+body { 
+    /* background: url('https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/rZJIMvhmliwmde8a6/videoblocks-top-view-of-sunflower-field-sunflowers-moving-in-the-wind_hlxym3at9l_thumbnail-1080_01.png') no-repeat center center fixed;   */
+    background-color: #000;
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover; */
     width: 100%;
     height: 100%;
     padding: 0px;
@@ -49,12 +66,15 @@ h1 {
 }
 
 #scoreboard-container {
-    z-index: -1;
+    z-index: 1;
     position: absolute;
-    display: inline-block;
+    /* display: inline-block; */
+    /* display: flex; */
     background-image: url("../images/scoreboard.jpeg");
-    height: 30vw;
-    width: 50vw;
+    background-size: 70%;
+    /* height: 30vw; */
+    /* height: 50%;  */
+    /* width: 50vw; */
     /* margin-left: 30px; */
     background-repeat: no-repeat;
 }
@@ -77,15 +97,17 @@ h1 {
 
 .trophy {
     height: 200px;
-    z-index: 100;
+    z-index: 11;
 }
 
 #racer1-score,
 #racer2-score {
+    position: relative;
    font-family: digital;
    color: red;
-   font-size: 120px;
-   margin-top: 58px;
+   /* font-size: 120px; */
+   font-size: 500%;
+   /* margin-top: 58px; */
    /* height: 20px; */
 }
 
@@ -186,7 +208,7 @@ h1 {
     font-family: 'Zen Dots', cursive;
     width: 100px;
     height: 100px;
-    z-index: 99;
+    z-index: 3;
     
     border-radius: 50%;
     border-width: 10px; 
@@ -203,7 +225,7 @@ button:focus {
 }
 
 .placeholder {
-    z-index: 100;
+    z-index: 11;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -243,7 +265,7 @@ button:focus {
     /* animation-name: enter; */
     /* animation-duration: 4s; */
     background-color: gray;
-    z-index: -1;
+    z-index: 1;
     position: relative;
     display: flex;
     flex-direction: column;
