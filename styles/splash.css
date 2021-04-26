@@ -165,7 +165,6 @@ button:hover::after, button:focus::after {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bolder;
   font-size: 20px;
-  /* background-color: darkorange; */
   font-family: 'Roboto', sans-serif;
   margin: 0;
   margin-top: 25px;
@@ -175,11 +174,9 @@ button:hover::after, button:focus::after {
 }
 
 .character-container {
-      /* background-color: blueviolet; */
       display: flex;
       justify-content: center;
       margin-top: 30px;
-      /* position: relative; */
       top: 500px;
 
   }

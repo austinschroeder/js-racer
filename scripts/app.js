@@ -47,7 +47,6 @@ $('.start-button').on('click', () => {
         $('#timerContainer').append($timer);  
         seconds--;
         document.getElementById("timer").textContent = seconds;
-        // console.log(seconds);
         if (seconds <= 0) clearInterval(countdown);
         //ADD/REMOVE ELEMENTS
         if (seconds <= 0) {
