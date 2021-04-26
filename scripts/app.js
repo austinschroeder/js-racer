@@ -18,18 +18,18 @@ const $winner2 = $(`<p id="winner2"> THE HARE IS VICTORIOUS </p>`)
 const $go = $(`<p id="go"> GO! GO! GO! </p>`);
 const $reset = $(`<button id="reset-button">RESET</button>`)
 const $startOver = $(`<button id="start-over-button">START OVER</button>`)
-const $red1 = $(`<img class="lights" id="red1" src="./images/red.png" />`)
-const $red2 = $(`<img class="lights" id="red2" src="./images/red.png" />`)
-const $red3 = $(`<img class="lights" id="red3" src="./images/red.png" />`)
-const $yellow1 = $(`<img class="lights" id="yellow1" src="./images/yellow.png" />`)
-const $yellow2 = $(`<img class="lights" id="yellow2" src="./images/yellow.png" />`)
-const $yellow3 = $(`<img class="lights" id="yellow3" src="./images/yellow.png" />`)
 const $green = $(`<img class="lights" id="green" src="./images/green.png" />`)
 const $trophy = $(`<img id="trophy" src="./images/trophy.gif" />`)
 
 let seconds;
 //START BUTTON
 $('.start-button').on('click', () => {
+    const $red1 = $(`<img class="lights" id="red1" src="./images/red.png" />`)
+    const $red2 = $(`<img class="lights" id="red2" src="./images/red.png" />`)
+    const $red3 = $(`<img class="lights" id="red3" src="./images/red.png" />`)
+    const $yellow1 = $(`<img class="lights" id="yellow1" src="./images/yellow.png" />`)
+    const $yellow2 = $(`<img class="lights" id="yellow2" src="./images/yellow.png" />`)
+    const $yellow3 = $(`<img class="lights" id="yellow3" src="./images/yellow.png" />`)
     // Play Audio
     //Crowd Cheers
     const crowd = document.createElement("audio");
