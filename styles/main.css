@@ -9,6 +9,7 @@
   and (-webkit-min-device-pixel-ratio: 1) { 
 }
 
+/* * { border: 1px solid red; } */
 
 body { 
     background: url('https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/rZJIMvhmliwmde8a6/videoblocks-top-view-of-sunflower-field-sunflowers-moving-in-the-wind_hlxym3at9l_thumbnail-1080_01.png') no-repeat center center fixed;  
@@ -53,10 +54,11 @@ h1 {
     position: absolute;
     display: inline-block;
     background-image: url("../images/scoreboard.jpeg");
-    height: 30vw;
-    width: 50vw;
-    /* margin-left: 30px; */
+    /* height: 30vw; */
+    /* width: 50vw; */
+    margin-left: 30px;
     background-repeat: no-repeat;
+    transform: scale(0.9);
 }
 
 
@@ -272,7 +274,8 @@ button:focus {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 180px;
+    height: 145px;
+    /* height: 180px; */
     color:white;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color:black;
@@ -284,6 +287,8 @@ button:focus {
     top: -165px;
     height: 350px;
 }
+
+
 
 #instruct-container1,
 #instruct-container2 {

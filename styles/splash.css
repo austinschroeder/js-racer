@@ -32,7 +32,7 @@ h1 {
       text-align: center;
       font-family: 'Zen Dots', cursive;
       font-size: 50px;
-      margin-top: 100px;
+      margin-top: 60px;
       color: blanchedalmond;
       text-shadow: 0 1px 0 #ccc,
                0 2px 0 #c9c9c9,
@@ -159,13 +159,26 @@ button:hover::after, button:focus::after {
            0 20px 20px rgba(0,0,0,.15);
 }
 
+.first-to-three {
+  text-align: center;
+  color: rgb(177, 157, 157);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+  font-size: 20px;
+  /* background-color: darkorange; */
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  margin-top: 25px;
+  /* width: 150px; */
 
+
+}
 
 .character-container {
       /* background-color: blueviolet; */
       display: flex;
       justify-content: center;
-      margin-top: 100px;
+      margin-top: 30px;
       /* position: relative; */
       top: 500px;
 
