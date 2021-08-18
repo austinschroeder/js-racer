@@ -1,3 +1,5 @@
+// TESTING
+
 // When button is clicked:
 //      -2 race cars appear on left side of screen
 //      -instructions <p> appear on how to drive cars
@@ -33,18 +35,18 @@ $('.start-button').on('click', () => {
     // Play Audio
     //Crowd Cheers
     const crowd = document.createElement("audio");
-    crowd.src = "./audio/crowd.mp3"; 
-    crowd.play(); 
-    
+    crowd.src = "./audio/crowd.mp3";
+    crowd.play();
+
     seconds = 6;
     //Countdown
     //ADD ELEMENTS 
     $('.race-cars').append($racer1);
     $('.race-cars').append($racer2);
-    
+
     //COUNTDOWN TIMER
-    let countdown = setInterval(function() {
-        $('#timerContainer').append($timer);  
+    let countdown = setInterval(function () {
+        $('#timerContainer').append($timer);
         seconds--;
         document.getElementById("timer").textContent = seconds;
         if (seconds <= 0) clearInterval(countdown);
@@ -58,8 +60,8 @@ $('.start-button').on('click', () => {
         }
         if (seconds === 3) {
             const countAudio = document.createElement("audio");
-            countAudio.src = "./audio/countdown2.mp3"; 
-            countAudio.play(); 
+            countAudio.src = "./audio/countdown2.mp3";
+            countAudio.play();
             $(".placeholder").append($red1);
             $(".placeholder").append($red2);
             $(".placeholder").append($red3);
@@ -71,7 +73,7 @@ $('.start-button').on('click', () => {
             $('.placeholder').append($yellow1);
             $('.placeholder').append($yellow2);
             $('.placeholder').append($yellow3);
-            
+
         }
         if (seconds === 1) {
             $('#yellow3').remove();
@@ -87,15 +89,15 @@ let winnerTwoTotal = 0;
 
 $(window).on("keydown", event => {
     if (seconds <= 0 && event.keyCode === 65) {
-        $(".one").animate({ 
+        $(".one").animate({
             left: "+=2%",
-        }, 100 );
+        }, 100);
         winnerOne += 1;
-        
+
         if (winnerOne === 45 && winnerTwo < 45) {
             const winnerMusic = document.createElement("audio");
-            winnerMusic.src = "./audio/victorymusic.mp3"; 
-            winnerMusic.play(); 
+            winnerMusic.src = "./audio/victorymusic.mp3";
+            winnerMusic.play();
             $('#winner-container').append($winner1);
             $('#reset-container').append($reset)
             $("#go").remove();
@@ -108,18 +110,18 @@ $(window).on("keydown", event => {
                 $('.placeholder').append($trophy);
             };
         };
-        
-        
+
+
     } else if (seconds <= 0 && event.keyCode === 76) {
-        
-        $(".two").animate({ 
+
+        $(".two").animate({
             left: "+=2%",
-        }, 100 );
+        }, 100);
         winnerTwo += 1;
         if (winnerTwo === 45 && winnerOne < 45) {
             const winnerMusic = document.createElement("audio");
-            winnerMusic.src = "./audio/victorymusic.mp3"; 
-            winnerMusic.play(); 
+            winnerMusic.src = "./audio/victorymusic.mp3";
+            winnerMusic.play();
             $('#winner-container').append($winner2);
             $('#reset-container').append($reset)
             $("#go").remove();
@@ -131,13 +133,13 @@ $(window).on("keydown", event => {
                 $('#reset-container').append($startOver)
                 $('.placeholder').append($trophy);
             }
-        }   
+        }
     }
     //Start Over Button
     $('#start-over-button').on('click', () => {
-    console.log('button is working');
-    location.reload();
-    return false;
+        console.log('button is working');
+        location.reload();
+        return false;
     });
 });
 
@@ -146,12 +148,12 @@ $('#reset-container').on('click', '#reset-button', () => {
     seconds = 6;
     winnerOne = 0;
     winnerTwo = 0;
-    $(".one").animate({ 
+    $(".one").animate({
         left: "0px",
-    }, 500 );
-    $(".two").animate({ 
+    }, 500);
+    $(".two").animate({
         left: "0px",
-    }, 500 );
+    }, 500);
     $("#winner1").remove();
     $("#winner2").remove();
     $("#reset-button").remove();
