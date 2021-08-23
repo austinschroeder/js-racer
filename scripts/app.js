@@ -102,6 +102,7 @@ $(window).on("keydown", event => {
             $('#reset-container').append($reset)
             $("#go").remove();
             // $("#tortoise").remove();
+
             winnerOneTotal += 1;
             // Declare P1 overall winner
             $('#racer1-score').text(`${winnerOneTotal}`)
@@ -127,6 +128,7 @@ $(window).on("keydown", event => {
             $('#reset-container').append($reset)
             $("#go").remove();
             // $("#hare").remove();
+
             winnerTwoTotal += 1;
             $('#racer2-score').text(`${winnerTwoTotal}`);
             // Declare P2 overall winner
